@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+
+    <!--spi router service-->
+    <!--<bean id="spiRouterService"-->
+          <!--class="com.dianping.merchant.service.repository.router.SpiRouterServiceimpl">-->
+    <!--</bean>-->
+
+    <bean id="spiRouterService"
+          class="com.dianping.merchant.service.repository.router.SpiRouterServiceimpl">
+        <property name="ruleList">
+            <list>
+                <ref bean="newestRule"></ref>
+                <ref bean="oldestRule"></ref>
+            </list>
+
+        </property>
+    </bean>
+
+
+
+    <!--routers-->
+    <bean id="newestRule"
+          class="com.dianping.merchant.service.repository.router.rule.NewestRule">
+    </bean>
+
+    <bean id="oldestRule"
+          class="com.dianping.merchant.service.repository.router.rule.OldestRule">
+    </bean>
+
+</beans>

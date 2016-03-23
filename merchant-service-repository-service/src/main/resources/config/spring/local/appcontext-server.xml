@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <bean id="merchantProductCommonService" class="com.dianping.dpsf.spring.ServiceRegistry" init-method="init"
+          lazy-init="false">
+        <property name="port" value="${merchant-service-repository.CommonService.port}" />
+        <property name="services">
+            <map>
+                <entry key="http://service.dianping.com/merchantProductCommonService/pushMessageService_1.0.0"
+                       value-ref="pushMessageService"/>
+                <entry key="http://service.dianping.com/merchantProductCommonService/privilegeJudgementService_1.0.0"
+                       value-ref="privilegeJudgementService"/>
+                <entry key="http://service.dianping.com/merchantProductCommonService/shopAccountTokenService_1.0.0"
+                       value-ref="shopAccountTokenService"/>
+                <entry key="http://service.dianping.com/merchantProductCommonService/merchantHomePageService_1.0.0"
+                       value-ref="merchantHomePageService"/>
+				<entry key="http://service.dianping.com/merchantProductCommonService/feedbackService_1.0.0"
+                       value-ref="feedbackService"/>
+                <entry key="http://service.dianping.com/merchantProductCommonService/modulePrivilegeService_1.0.0"
+                       value-ref="modulePrivilegeService"/>
+                <entry key="http://service.dianping.com/merchantProductCommonService/helpCenterService_1.0.0"
+                       value-ref="helpCenterService"/>
+            </map>
+        </property>
+    </bean>
+</beans>

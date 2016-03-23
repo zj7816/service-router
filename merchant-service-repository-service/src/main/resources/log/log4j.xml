@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	threshold="null" debug="null">
+
+	<appender name="CONSOLE"
+		class="com.dianping.combiz.misc.ExtendedConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[merchant-service-repository-service]%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="avatarAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/data/applogs/merchant-service-repository-service/logs/avatar.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[merchant-service-repository-service]%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="appAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/data/applogs/merchant-service-repository-service/logs/app.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[merchant-service-repository-service]%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+	<appender name="ibatisAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/data/applogs/merchant-service-repository-service/logs/ibatis.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[merchant-service-repository-service]%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+	<appender name="illegalAccessAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File"
+			value="/data/applogs/merchant-service-repository-service/logs/illegalAccess.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[merchant-service-repository-service]%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+	<appender name="HAWK" class="com.dianping.hawk.HawkAppender">
+		<param name="key1" value="merchant-service-repository-service" />
+		<param name="cacheTimeMillis" value="10000" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d - %c -%-4r [%t] %-5p %x - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="catAppender" class="com.dianping.cat.log4j.CatAppender">
+	</appender>
+	
+	<appender name="marinLogAppender" class="com.dianping.merchant.sword.monitor.log.marin.log4j.MerchantExceptionAppender">
+	</appender>
+	<logger name="com.dianping.avatar" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="avatarAppender" />
+		<appender-ref ref="HAWK" />
+	</logger>
+	<logger name="com.ibatis" additivity="false">
+		<level value="WARN" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ibatisAppender" />
+	</logger>
+
+	<logger name="java.sql">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.springframework.jms">
+		<level value="ERROR" />
+	</logger>
+	<logger name="org.apache.activemq">
+		<level value="ERROR" />
+	</logger>
+	<logger name="org.apache.struts2">
+		<level value="ERROR" />
+	</logger>
+	<logger name="org.apache.struts2.dispatcher.Dispatcher"
+		additivity="false">
+		<level value="WARN" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="illegalAccessAppender" />
+	</logger>
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="appAppender" />
+		<appender-ref ref="HAWK" />
+		<appender-ref ref="catAppender" />
+		<appender-ref ref="marinLogAppender" />
+	</root>
+
+</log4j:configuration>

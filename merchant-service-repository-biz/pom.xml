@@ -1,0 +1,154 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dianping.merchant</groupId>
+        <artifactId>merchant-service-repository</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>merchant-service-repository-biz</artifactId>
+    <packaging>jar</packaging>
+    <name>merchant-service-repository-biz</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dianping.platform</groupId>
+            <artifactId>platform-sdk</artifactId>
+        </dependency>
+
+        <!-- merchant related begin -->
+        <dependency>
+            <groupId>com.dianping.merchant</groupId>
+            <artifactId>merchant-service-repository-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping.merchant</groupId>
+            <artifactId>merchant-sword-monitor-log</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping.merchant</groupId>
+            <artifactId>merchant-common-utils</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping.merchant</groupId>
+            <artifactId>merchant-communication-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping.merchant</groupId>
+            <artifactId>merchant-common-http</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping.merchant</groupId>
+            <artifactId>merchant-common-logger</artifactId>
+        </dependency>
+
+
+        <!-- merchant related end -->
+
+        <dependency>
+            <groupId>com.dianping</groupId>
+            <artifactId>mobile-oss-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping</groupId>
+            <artifactId>bc-shop-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dianping</groupId>
+            <artifactId>avatar-counter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.site.common</groupId>
+            <artifactId>lookup</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dianping</groupId>
+            <artifactId>avatar-logger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping</groupId>
+            <artifactId>merchant-os-booking-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping.neocortex</groupId>
+            <artifactId>neocortex-4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dianping.columbus</groupId>
+            <artifactId>rs-open-remote</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>qq-central</groupId>
+            <artifactId>dcache_client_api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- test related -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <!-- test related -->
+    </dependencies>
+</project>

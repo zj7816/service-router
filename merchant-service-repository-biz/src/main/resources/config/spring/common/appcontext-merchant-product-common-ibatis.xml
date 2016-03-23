@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="merchantproductcommon.dataSource" class="com.dianping.zebra.group.jdbc.GroupDataSource" init-method="init">
+		<property name="jdbcRef" value="dianpingbc" />
+	    <property name="poolType" value="tomcat-jdbc" /> 
+	    <property name="minPoolSize" value="${shopclaim-biz.master.c3p0.minSize}" />
+	    <property name="maxPoolSize" value="${shopclaim-biz.master.c3p0.maxSize}" />
+	    <property name="initialPoolSize" value="${shopclaim-biz.master.c3p0.initialSize}" />
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="merchantproductcommon.dataSource"/>
+    </bean>
+
+    <!-- The SqlMapClient configuration for avatar-based System -->
+    <bean id="merchantproductcommon.sqlMapClient"
+          class="com.dianping.avatar.dao.ibatis.spring.LimitSqlMapClientFactoryBean">
+        <property name="dataSource" ref="merchantproductcommon.dataSource"/>
+        <property name="configLocation" value="classpath:/config/sqlmap/sqlmap-config.xml" />
+        <property name="sqlConvert" ref="mysqlConverter"/>
+    </bean>
+
+    <!-- The DAO default implementation for avatar -->
+    <bean id="merchantproductcommon.daoRealizeTarget" class="com.dianping.avatar.dao.ibatis.IBatisGenericDaoImpl"
+          abstract="true">
+        <property name="sqlMapClient" ref="merchantproductcommon.sqlMapClient" />
+    </bean>
+
+</beans>

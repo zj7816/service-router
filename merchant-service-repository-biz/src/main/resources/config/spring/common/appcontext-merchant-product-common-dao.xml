@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+    <!-- spi服务dao -->
+    <bean id="spiServiceDao" parent="parentDao">
+        <property name="proxyInterfaces" value="com.dianping.merchant.service.repository.dao.SpiServiceDao"/>
+        <property name="target">
+            <bean parent="merchantproductcommon.daoRealizeTarget">
+                <constructor-arg value="SpiService"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- spi渠道dao -->
+    <bean id="spiServiceProviderDao" parent="parentDao">
+        <property name="proxyInterfaces" value="com.dianping.merchant.service.repository.dao.SpiServiceProviderDao"/>
+        <property name="target">
+            <bean parent="merchantproductcommon.daoRealizeTarget">
+                <constructor-arg value="SpiServiceProvider"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- spi路由器dao -->
+    <bean id="spiRouterDao" parent="parentDao">
+        <property name="proxyInterfaces" value="com.dianping.merchant.service.repository.dao.SpiRouterDao"/>
+        <property name="target">
+            <bean parent="merchantproductcommon.daoRealizeTarget">
+                <constructor-arg value="SpiRouter"/>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

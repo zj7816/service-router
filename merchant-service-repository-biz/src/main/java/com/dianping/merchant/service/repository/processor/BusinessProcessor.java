@@ -1,0 +1,1 @@
+/** *dianping.com Inc *Copyright(c)2004-2015 All Rights Reserved. */package com.dianping.merchant.service.repository.processor;/** * @author zhangjie * @version $Id: BusinessProcessor.java, v 0.1 2015-11-16 下午5:32 zhangjie Exp $$ */public interface BusinessProcessor<S extends BaseReq,T extends BaseResp> {    public T execute(final S request);}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SpiService">
+
+    <typeAlias alias="SpiServiceEntity"
+               type="com.dianping.merchant.service.repository.entity.SpiService"/>
+
+    <resultMap id="spiServiceEntity" class="SpiServiceEntity">
+        <result column="Id" property="id"/>
+        <result column="ServiceCode" property="serviceCode"/>
+        <result column="ServiceName" property="serviceName"/>
+        <result column="serviceType" property="serviceType"/>
+        <result column="AddTime" property="addTime"/>
+        <result column="UpdateTime" property="updateTime"/>
+        <result column="Status" property="status"/>
+        <result column="RouterID" property="routerId"/>
+    </resultMap>
+
+
+    <select id="findByCode" resultMap="spiServiceEntity"
+            parameterClass="map">
+        Select * from BC_Spi_Service where ServiceCode=#serviceCode# and Status=#status#
+    </select>
+
+
+    <insert id="insert" parameterClass="map">
+        <![CDATA[
+		INSERT INTO BC_Spi_Service
+		(
+            ServiceCode,
+            ServiceName,
+            ServiceType,
+            RouterID,
+            Status,
+            AddTime,
+            UpdateTime
+        )
+		VALUES
+		(
+		    #entity.serviceCode#,
+		    #entity.serviceName#,
+		    #entity.serviceType#,
+		    #entity.routerId#,
+		    #entity.status#,
+		    NOW(),
+		    NOW()
+		)
+		]]>
+        <selectKey resultClass="java.lang.Integer" keyProperty="id">
+            SELECT @@IDENTITY AS id
+        </selectKey>
+    </insert>
+
+    <!--<update id="update" parameterClass="map">-->
+    <!--<![CDATA[-->
+
+    <!--UPDATE DianPingBC.BC_ShopAccount_Token-->
+    <!--SET-->
+    <!--IsLogin=#entity.isLogin#,-->
+    <!--OSType=#entity.osTypeId#,-->
+    <!--OSDetail=#entity.osDetail#,-->
+    <!--DeviceModel=#entity.deviceModel#,-->
+    <!--AppVersion=#entity.appVersion#,-->
+    <!--Token=#entity.token#,-->
+    <!--IsValid=#entity.isValid#,-->
+    <!--IsBadReviewNeed=#entity.isBadReviewNeed#,-->
+    <!--IsFailReplyNeed=#entity.isFailReplyNeed#,-->
+    <!--IsTakeawayMsgNeed=#entity.isTakeawayMsgNeed#,-->
+    <!--IsBookMsgNeed=#entity.isBookMsgNeed#,-->
+    <!--LastLoginTime=#entity.lastLoginTime#,-->
+    <!--LastLogoutTime=#entity.lastLogoutTime#,-->
+    <!--LastUpdateTime=#entity.lastUpdateTime#,-->
+    <!--DpId=#entity.dpId#-->
+    <!--WHERE-->
+    <!--Id = #entity.id# ;-->
+
+    <!--]]>-->
+    <!--</update>-->
+
+    <!--<delete id="remove" parameterClass="map">-->
+    <!--DELETE FROM DianPingBC.BC_ShopAccount_Token WHERE-->
+    <!--ID=#entity.id#;-->
+    <!--</delete>-->
+
+</sqlMap>

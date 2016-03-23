@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SpiRouter">
+
+    <typeAlias alias="SpiRouterEntity"
+               type="com.dianping.merchant.service.repository.entity.SpiRouter"/>
+
+    <resultMap id="spiRouterEntity" class="SpiRouterEntity">
+        <result column="Id" property="id"/>
+        <result column="RouterName" property="routerName"/>
+        <result column="RouterDesc" property="routerDesc"/>
+        <result column="RouterContent" property="routerContent"/>
+        <result column="AddTime" property="addTime"/>
+        <result column="UpdateTime" property="updateTime"/>
+    </resultMap>
+
+
+    <select id="findAllRouters" resultMap="spiRouterEntity"
+            parameterClass="map">
+        SELECT * from BC_Spi_Routers;
+    </select>
+
+
+</sqlMap>
