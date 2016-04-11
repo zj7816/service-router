@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.dianping.merchant</groupId>
+		<artifactId>merchant-forum</artifactId>
+		<version>0.0.8</version>
+	</parent>
+	<artifactId>merchant-forum-mq</artifactId>
+	<name>merchant-forum-mq</name>
+	<packaging>war</packaging>
+	<dependencies>
+
+		<dependency>
+			<groupId>com.dianping.merchant</groupId>
+			<artifactId>merchant-forum-biz</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.dianping.platform</groupId>
+			<artifactId>platform-sdk</artifactId>
+		</dependency>
+
+
+		<!-- provided and test scope, can not transitive dependency -->
+		<!-- Web container provided -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+		<!-- test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+		</dependency>
+		<!-- provided and test scope, can not transitive dependency -->
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<!-- <filtering>true</filtering> -->
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1-alpha-1</version>
+				<configuration>
+					<warName>${artifactId}-${env}-${version}</warName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>7.2.1.v20101111</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.jdbc.url>
+					jdbc:mysql://192.168.7.87:3306/sonar?useUnicode=true&amp;characterEncoding=utf8
+				</sonar.jdbc.url>
+				<sonar.jdbc.driverClassName>com.mysql.jdbc.Driver</sonar.jdbc.driverClassName>
+				<sonar.jdbc.username>sonar</sonar.jdbc.username>
+				<sonar.jdbc.password>sonar</sonar.jdbc.password>
+				<sonar.host.url>http://192.168.7.87:9000</sonar.host.url>
+				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+			</properties>
+		</profile>
+		<profile>
+			<id>Test</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>install</id>
+								<phase>install</phase>
+								<configuration>
+									<tasks>
+										<copy todir="/data/Dianping/Deploy">
+											<fileset dir="${basedir}/target">
+												<include name="${artifactId}-${env}-${version}.war" />
+											</fileset>
+										</copy>
+										<exec dir="/data/Dianping/script" executable="bash"
+											failonerror="true">
+											<arg value="remote-exec-jboss.sh" />
+										</exec>
+									</tasks>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

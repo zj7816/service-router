@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.dianping.merchant.forum.mq"/>
+
+    <bean id="consumerFactory" class="com.dianping.swallow.consumer.impl.ConsumerFactoryImpl"
+          factory-method="getInstance"/>
+    <bean id="consumerConfig" class="com.dianping.swallow.consumer.ConsumerConfig">
+        <property name="threadPoolSize" value="10"/>
+    </bean>
+    <bean id="destination" class="com.dianping.swallow.common.message.Destination"
+          factory-method="topic">
+        <constructor-arg>
+            <value>${merchant-forum.swallow.operate.topic}</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="statisticConsumer" class="com.dianping.event.mq.StatisticConsumer"/>
+    <bean id="pushConsumer" class="com.dianping.event.mq.DailyReportExecutive"/>
+    <bean id="operationLogConsumer" class="com.dianping.event.mq.ReportAggregationConsumer"/>
+
+    <bean id="statisticConsumerClient" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">
+        <constructor-arg>
+            <ref bean="destination"/>
+        </constructor-arg>
+        <constructor-arg>
+            <value>mp_forum_stati_rev</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="consumerConfig"/>
+        </constructor-arg>
+        <property name="listener">
+            <ref local="statisticConsumer"/>
+        </property>
+    </bean>
+
+    <bean id="pushConsumerClient" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">
+        <constructor-arg>
+            <ref bean="destination"/>
+        </constructor-arg>
+        <constructor-arg>
+            <value>mp_forum_push_rev</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="consumerConfig"/>
+        </constructor-arg>
+        <property name="listener">
+            <ref local="pushConsumer"/>
+        </property>
+    </bean>
+
+    <bean id="logConsumerClient" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">
+        <constructor-arg>
+            <ref bean="destination"/>
+        </constructor-arg>
+        <constructor-arg>
+            <value>mp_forum_log_rev</value>
+        </constructor-arg>
+        <property name="listener">
+            <ref local="operationLogConsumer"/>
+        </property>
+    </bean>
+</beans>

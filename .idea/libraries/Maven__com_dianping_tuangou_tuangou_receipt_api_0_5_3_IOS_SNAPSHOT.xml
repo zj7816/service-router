@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dianping.tuangou:tuangou-receipt-api:0.5.3-IOS-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-receipt-api/0.5.3-IOS-SNAPSHOT/tuangou-receipt-api-0.5.3-IOS-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-receipt-api/0.5.3-IOS-SNAPSHOT/tuangou-receipt-api-0.5.3-IOS-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-receipt-api/0.5.3-IOS-SNAPSHOT/tuangou-receipt-api-0.5.3-IOS-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

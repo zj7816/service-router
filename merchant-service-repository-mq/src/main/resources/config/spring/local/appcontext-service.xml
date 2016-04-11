@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.dianping.merchant"/>
+
+    <!--&lt;!&ndash; 消费者工厂类 &ndash;&gt;-->
+    <!--<bean id="consumerFactory" class="com.dianping.swallow.consumer.impl.ConsumerFactoryImpl"-->
+          <!--factory-method="getInstance"/>-->
+    <!--&lt;!&ndash; 消费者配置类 &ndash;&gt;-->
+    <!--<bean id="consumerConfig" class="com.dianping.swallow.consumer.ConsumerConfig">-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; 消息的目的地(即Topic) &ndash;&gt;-->
+    <!--<bean id="productReviewMessageDestination" class="com.dianping.swallow.common.message.Destination"-->
+          <!--factory-method="topic">-->
+        <!--<constructor-arg>-->
+            <!--<value>${VerifyResultAction}</value>-->
+            <!--&lt;!&ndash; ${topicName}为消息的Topic，需自定义 &ndash;&gt;-->
+        <!--</constructor-arg>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; YourMessageListener为您实现的消息事件监听器，负责处理接收到的消息 &ndash;&gt;-->
+    <!--<bean id="auditReviewReplyMessageListener" class="com.dianping.merchant.forum.mq.audit.AuditReviewReplyMessageListener"/>-->
+    <!--&lt;!&ndash; 消费者 &ndash;&gt;-->
+    <!--<bean id="consumerClient" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="productReviewMessageDestination"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<value>mp_prd_adt_rply</value>-->
+            <!--&lt;!&ndash; ${consumerID}为消费者id，需自定义 &ndash;&gt;-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="consumerConfig"/>-->
+        <!--</constructor-arg>-->
+        <!--<property name="listener">-->
+            <!--<ref local="auditReviewReplyMessageListener"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+
+    <!--&lt;!&ndash; 消费者配置类 &ndash;&gt;-->
+    <!--<bean id="consumerConfig_thread5" class="com.dianping.swallow.consumer.ConsumerConfig">-->
+        <!--<property name="threadPoolSize" value="5"/>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; 消息的目的地(即Topic) &ndash;&gt;-->
+    <!--<bean id="productReviewAddMessageDestination" class="com.dianping.swallow.common.message.Destination"-->
+          <!--factory-method="topic">-->
+        <!--<constructor-arg>-->
+            <!--<value>${DPActionCommon}</value>-->
+            <!--&lt;!&ndash; ${topicName}为消息的Topic，需自定义 &ndash;&gt;-->
+        <!--</constructor-arg>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; 中差评消息消费的Listener &ndash;&gt;-->
+    <!--<bean id="addReviewReplyMessageListener" class="com.dianping.merchant.forum.mq.audit.AddReviewReplyNoticeMessageListener"/>-->
+    <!--&lt;!&ndash; 消费者1 &ndash;&gt;-->
+    <!--<bean id="consumerClientOne" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="productReviewAddMessageDestination"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<value>mp_prd_adt_rply</value>-->
+            <!--&lt;!&ndash; ${consumerID}为消费者id，需自定义 &ndash;&gt;-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="consumerConfig_thread5"/>-->
+        <!--</constructor-arg>-->
+        <!--<property name="listener">-->
+            <!--<ref local="addReviewReplyMessageListener"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 消费者2 &ndash;&gt;-->
+    <!--<bean id="consumerClientTwo" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="productReviewAddMessageDestination"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<value>mp_prd_adt_rply</value>-->
+            <!--&lt;!&ndash; ${consumerID}为消费者id，需自定义 &ndash;&gt;-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="consumerConfig_thread5"/>-->
+        <!--</constructor-arg>-->
+        <!--<property name="listener">-->
+            <!--<ref local="addReviewReplyMessageListener"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 消费者3 &ndash;&gt;-->
+    <!--<bean id="consumerClientThree" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="productReviewAddMessageDestination"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<value>mp_prd_adt_rply</value>-->
+            <!--&lt;!&ndash; ${consumerID}为消费者id，需自定义 &ndash;&gt;-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="consumerConfig_thread5"/>-->
+        <!--</constructor-arg>-->
+        <!--<property name="listener">-->
+            <!--<ref local="addReviewReplyMessageListener"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 消费者配置类 &ndash;&gt;-->
+    <!--<bean id="consumerConfigFour" class="com.dianping.swallow.consumer.ConsumerConfig">-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; 消息的目的地(即Topic) &ndash;&gt;-->
+    <!--<bean id="privacyMessageDestination" class="com.dianping.swallow.common.message.Destination"-->
+          <!--factory-method="topic">-->
+        <!--<constructor-arg>-->
+            <!--<value>${PrivacyMessageTopic}</value>-->
+        <!--</constructor-arg>-->
+    <!--</bean>-->
+    <!--<bean id="privacyMessageListener" class="com.dianping.merchant.forum.mq.audit.PrivacyMessageListener"/>-->
+    <!--&lt;!&ndash; 消费者 &ndash;&gt;-->
+    <!--<bean id="consumerClientFour" factory-bean="consumerFactory" factory-method="createConsumer" init-method="start">-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="privacyMessageDestination"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<value>mp_privacy_msg</value>-->
+            <!--&lt;!&ndash; ${consumerID}为消费者id，需自定义 &ndash;&gt;-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="consumerConfigFour"/>-->
+        <!--</constructor-arg>-->
+        <!--<property name="listener">-->
+            <!--<ref local="privacyMessageListener"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--&lt;!&ndash; Producer &ndash;&gt;-->
+    <!--&lt;!&ndash;生产者的工厂类 ProducerFactory &ndash;&gt;-->
+    <!--<bean id="producerFactory" class="com.dianping.swallow.producer.impl.ProducerFactoryImpl"-->
+          <!--factory-method="getInstance"/>-->
+    <!--&lt;!&ndash;生产者 ProducerClient &ndash;&gt;-->
+    <!--<bean id="producerClient" factory-bean="producerFactory"-->
+          <!--factory-method="createProducer">-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="destination"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<ref bean="producerConfig"/>-->
+        <!--</constructor-arg>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;消息的目的地 Destination &ndash;&gt;-->
+    <!--<bean id="destination" class="com.dianping.swallow.common.message.Destination"-->
+          <!--factory-method="topic">-->
+        <!--<constructor-arg value="${MerchantMessageCenterTopic}"/>-->
+        <!--&lt;!&ndash; ${topicName}为消息的Topic，需自定义&ndash;&gt;-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;生产者的配置类 ProducerConfig &ndash;&gt;-->
+    <!--<bean id="producerConfig" class="com.dianping.swallow.producer.ProducerConfig">-->
+        <!--<property name="mode" value="ASYNC_MODE"/>-->
+    <!--</bean>-->
+
+
+
+
+</beans>

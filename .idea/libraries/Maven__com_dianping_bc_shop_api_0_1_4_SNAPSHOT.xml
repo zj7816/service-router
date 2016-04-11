@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dianping:bc-shop-api:0.1.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/bc-shop-api/0.1.4-SNAPSHOT/bc-shop-api-0.1.4-20150615.033659-8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/bc-shop-api/0.1.4-SNAPSHOT/bc-shop-api-0.1.4-20150615.033659-8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/bc-shop-api/0.1.4-SNAPSHOT/bc-shop-api-0.1.4-20150615.033659-8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

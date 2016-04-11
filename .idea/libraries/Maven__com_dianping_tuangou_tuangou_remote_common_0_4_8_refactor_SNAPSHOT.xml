@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dianping.tuangou:tuangou-remote-common:0.4.8_refactor-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-remote-common/0.4.8_refactor-SNAPSHOT/tuangou-remote-common-0.4.8_refactor-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-remote-common/0.4.8_refactor-SNAPSHOT/tuangou-remote-common-0.4.8_refactor-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-remote-common/0.4.8_refactor-SNAPSHOT/tuangou-remote-common-0.4.8_refactor-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

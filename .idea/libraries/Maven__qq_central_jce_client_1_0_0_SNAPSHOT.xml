@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: qq-central:jce_client:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/qq-central/jce_client/1.0.0-SNAPSHOT/jce_client-1.0.0-20150820.040656-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/qq-central/jce_client/1.0.0-SNAPSHOT/jce_client-1.0.0-20150820.040656-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/qq-central/jce_client/1.0.0-SNAPSHOT/jce_client-1.0.0-20150820.040656-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

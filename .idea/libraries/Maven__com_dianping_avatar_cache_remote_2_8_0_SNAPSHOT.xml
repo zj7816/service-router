@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dianping:avatar-cache-remote:2.8.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/avatar-cache-remote/2.8.0-SNAPSHOT/avatar-cache-remote-2.8.0-20151106.023041-4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/avatar-cache-remote/2.8.0-SNAPSHOT/avatar-cache-remote-2.8.0-20151106.023041-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/avatar-cache-remote/2.8.0-SNAPSHOT/avatar-cache-remote-2.8.0-20151106.023041-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

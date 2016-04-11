@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="merchant-service-repository-service:war">
+    <output-path>$PROJECT_DIR$/merchant-service-repository-service/target</output-path>
+    <root id="archive" name="merchant-service-repository-service-qa-0.0.1.war">
+      <element id="artifact" artifact-name="merchant-service-repository-service:war exploded" />
+    </root>
+  </artifact>
+</component>

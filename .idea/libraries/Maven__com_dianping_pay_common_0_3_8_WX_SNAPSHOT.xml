@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dianping:pay-common:0.3.8-WX-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/pay-common/0.3.8-WX-SNAPSHOT/pay-common-0.3.8-WX-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/pay-common/0.3.8-WX-SNAPSHOT/pay-common-0.3.8-WX-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/pay-common/0.3.8-WX-SNAPSHOT/pay-common-0.3.8-WX-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dicts>
+	<!-- 第二优先级 -->
+	<import file="classpath:/config/dict/dict-exception.xml"/>
+	<import file="classpath:/config/dict/dict-constant.xml"/>
+</dicts>

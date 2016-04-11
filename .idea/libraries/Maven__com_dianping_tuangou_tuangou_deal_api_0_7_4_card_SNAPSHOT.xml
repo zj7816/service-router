@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dianping.tuangou:tuangou-deal-api:0.7.4_card-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-deal-api/0.7.4_card-SNAPSHOT/tuangou-deal-api-0.7.4_card-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-deal-api/0.7.4_card-SNAPSHOT/tuangou-deal-api-0.7.4_card-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/dianping/tuangou/tuangou-deal-api/0.7.4_card-SNAPSHOT/tuangou-deal-api-0.7.4_card-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
