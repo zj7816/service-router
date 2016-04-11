@@ -16,6 +16,7 @@
         <module>merchant-service-repository-biz</module>
         <module>merchant-service-repository-api</module>
         <module>merchant-service-repository-service</module>
+        <module>merchant-service-repository-mq</module>
     </modules>
 
     <properties>

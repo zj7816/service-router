@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/merchant-service-repository-api/merchant-service-repository-api.iml" filepath="$PROJECT_DIR$/merchant-service-repository-api/merchant-service-repository-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/merchant-service-repository-biz/merchant-service-repository-biz.iml" filepath="$PROJECT_DIR$/merchant-service-repository-biz/merchant-service-repository-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/merchant-service-repository-mq/merchant-service-repository-mq.iml" filepath="$PROJECT_DIR$/merchant-service-repository-mq/merchant-service-repository-mq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/merchant-service-repository-service/merchant-service-repository-service.iml" filepath="$PROJECT_DIR$/merchant-service-repository-service/merchant-service-repository-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/service-router.iml" filepath="$PROJECT_DIR$/.idea/service-router.iml" />
     </modules>
   </component>
